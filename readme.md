@@ -17,19 +17,18 @@ Major updates of version 3.0.0 released on Feb 23, 2021:
 5. Builtin CAPTCHA module SECURIMAGE. https://github.com/dapphp/securimage/blob/master/securimage.php 
 6. A simple image slideshow/carousal function in Javascript. To use it, in sidebar_one, either paste the following. Change your src location accordingly. Notice total number of the dot class tags should match the total pictures.
 
-<div id="slideshow">
-<div class="mySlides"><img src="media/myslide1.png"><div class="text">text1</div></div>
-<div class="mySlides"><img src=" media/myslide2.png"><div class="text">text2</div></div>
-<div class="mySlides"><img src=" media/myslide3.png"><div class="text">text3</div></div>
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<div id="slideshow_dots">
-<span class="dot" onclick="currentSlide(1)"></span>
-<span class="dot" onclick="currentSlide(2)"></span>
-<span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
+		<div id="slideshow">
+		<div class="mySlides"><img src="media/myslide1.png"><div class="text">text1</div></div>
+		<div class="mySlides"><img src=" media/myslide2.png"><div class="text">text2</div></div>
+		<div class="mySlides"><img src=" media/myslide3.png"><div class="text">text3</div></div>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<div id="slideshow_dots">
+		<span class="dot" onclick="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
 or use the built-in function:
 
 [function:slideshow('"text1"::media/slide1.png||"text2"::media/slide2.png||"text3"::media/slide3.png)]
@@ -62,20 +61,20 @@ This product is distributed under the GPL. Please read through the file
     To administrate the page, go to https://your-domain.tld/path/to/ritecms/cms/. 
     The default admin userdata is: username: admin, password: admin.
  4. special steps for nginx servers. You need to change your virtual host folder for redirect to work. Below is an example of server block.
-``` nginx
-server {
-    server_name ritecms.com;
-    listen 80;
-    root /var/www/public_html/ritecms.com; 
-    index index.php index.htm index.html;
-    error_log  /var/www/log/rite_error.log;
-    access_log  /var/www/log/rite_access_error.log;
-    location ~ \.m$ {if (!-e $request_filename){rewrite ^/(.*)$ /index.php?mobile=true&qs=$1 last;break;}}
-    location / {if (!-e $request_filename){rewrite ^/(.*)$ /index.php?qs=$1 last;break;}} 
-	location /data {deny all;return 404;}
-    location ~ \.php$ {include snippets/fastcgi-php.conf;fastcgi_pass unix:/run/php/php7.3-fpm.sock;}
-}
-``` 
+
+		server {
+			server_name ritecms.com;
+			listen 80;
+			root /var/www/public_html/ritecms.com; 
+			index index.php index.htm index.html;
+			error_log  /var/www/log/rite_error.log;
+			access_log  /var/www/log/rite_access_error.log;
+			location ~ \.m$ {if (!-e $request_filename){rewrite ^/(.*)$ /index.php?mobile=true&qs=$1 last;break;}}
+			location / {if (!-e $request_filename){rewrite ^/(.*)$ /index.php?qs=$1 last;break;}} 
+			location /data {deny all;return 404;}
+			location ~ \.php$ {include snippets/fastcgi-php.conf;fastcgi_pass unix:/run/php/php7.3-fpm.sock;}
+		}
+
 No MySQL data initialization is provided. Please use the Sqlite version for reference located in the data folder.
 5. to login to the backend, please use the new entry script at the root folder: admin.php. Default password is admin/admin.
   
