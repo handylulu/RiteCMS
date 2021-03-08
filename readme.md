@@ -19,8 +19,8 @@ Major updates of version 3.0.0 released on Feb 23, 2021:
 
 		<div id="slideshow">
 		<div class="mySlides"><img src="media/myslide1.png"><div class="text">text1</div></div>
-		<div class="mySlides"><img src=" media/myslide2.png"><div class="text">text2</div></div>
-		<div class="mySlides"><img src=" media/myslide3.png"><div class="text">text3</div></div>
+		<div class="mySlides"><img src="media/myslide2.png"><div class="text">text2</div></div>
+		<div class="mySlides"><img src="media/myslide3.png"><div class="text">text3</div></div>
 		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		<a class="next" onclick="plusSlides(1)">&#10095;</a>
 		</div>
