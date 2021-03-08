@@ -119,9 +119,9 @@ Lucas
 
 2020.3.3
 
-### Past versions
+## Past versions
 ----------------------------------
 Previous versions can be found in SourceForge.
 https://sourceforge.net/projects/ritecms/
-## Version 2.2.1 (Not recommended, for reference only)
+### Version 2.2.1 (Not recommended, for reference only)
 [Version 2.2.1 for reference only](https://netactuate.dl.sourceforge.net/project/ritecms/ritecms_2.2.1.zip)
