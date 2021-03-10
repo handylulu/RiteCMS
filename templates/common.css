@@ -13,7 +13,7 @@ h3 {margin:.3em;font-size:1.25em;text-decoration:underline;color:#66ccff;font-va
 #admin a:hover span	{color:#6cf;}
 #admin a img	{margin:0 5px -3px 0;padding:0;}
 
-#top,#main,#bottom  {max-width:62em;margin-left:auto;margin-right:auto;padding:0;}
+#top,#main,#bottom  {max-width:68em;margin-left:auto;margin-right:auto;padding:0;}
 
 #mainwrapper                  {clear:both;margin:0;padding:0 0 3em 0;background:#fff;border-bottom:1px solid #ccc;}
 #main  {background:#fff;}
@@ -26,7 +26,7 @@ h3 {margin:.3em;font-size:1.25em;text-decoration:underline;color:#66ccff;font-va
 #pageinfo  img          {max-width:100%;}
 #headline {color:red;padding:0;margin:0 auto;text-align:center;box-shadow:0 2px #ccc;max-width:60em;}
 .head   {margin:0 auto;padding:0;}
-#content                      {clear:both;margin:0;padding:10px 0 0 0;max-width:43em;min-height:18rem;}
+#content                      {clear:both;margin:0;padding:10px 0 0 0;min-height:18rem;}
 #content #category            {float:right;text-align:right;padding:0;font-size:0.82em;color:#808080;}
 #content #breadcrumbs         {position:relative;top:-1.3em;margin:0;padding:0 0 0.5em 0;font-size:0.75em;}
 #content #time                {position:relative;top:-0.5em;margin:0;padding:0 0 1em 0;font-size:0.9em;}
@@ -59,10 +59,8 @@ h3 {margin:.3em;font-size:1.25em;text-decoration:underline;color:#66ccff;font-va
 #content div.news p           {margin:0;padding:0;}
 #content div.news p.link      {margin:3px 0 0 0;padding:0;color:#F47C47;}
 #content div.news a.comments  {font-size:0.83em;color:#808080;}
-div.products                 {display:flex;flex-direction:row;flex-wrap:wrap;flex-flow:row wrap;align-items:flex-start;align-content: center;min-height:30rem;overflow:visible;}
-div.products div.scl, div.products div.scr {max-width:25rem;order:0;max-width:28rem;min-height:20rem;margin:auto;}
-div.scl                        {}
-div.scr                        {}
+#main .overview    {clear:both;display:flex;flex-flow:row wrap;align-items:flex-start;align-content: space-between;min-height:30rem;overflow:visible;width:100%;}
+#main .overview .product {min-width:22em;max-width:48%;min-height:20rem;margin:1em 0;padding:1em 1.5em 1em 0;text-align:left;} 
 
 #content .logos img {display:block;margin:6px 8px;padding:0;float:left;}
 

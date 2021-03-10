@@ -86,6 +86,8 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
       $page_data['breadcrumbs'] = explode(',',htmlspecialchars($data['breadcrumbs']));
       $page_data['sections'] = str_replace(',',', ',htmlspecialchars($data['sections']));
       $page_data['include_page'] = intval($data['include_page']);
+      
+      
       $page_data['include_order'] = intval($data['include_order']);
       $page_data['include_rss'] = intval($data['include_rss']);
       $page_data['include_sitemap'] = intval($data['include_sitemap']);
@@ -153,7 +155,7 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
     $page_data['sidebar_1_formatting'] = $settings['default_formatting'];
     $page_data['sidebar_2_formatting'] = $settings['default_formatting'];
     $page_data['sidebar_3_formatting'] = $settings['default_formatting'];
-    $page_data['include_page'] = 0;
+    $page_data['include_page'] = 0; 
     $page_data['include_order'] = 0;
     $page_data['include_rss'] = 0;
     $page_data['include_sitemap'] = 0;
@@ -397,6 +399,25 @@ if(isset($_SESSION[$settings['session_prefix'].'user_id']))
          {
           $time = $last_modified;
          }
+         
+        if(isset($settings['default_as_blog']) && $settings['default_as_blog'] != '')
+   		{
+   			$dbr = Database::$content->prepare("SELECT id,type FROM ".Database::$db_settings['pages_table']." WHERE page=:page LIMIT 1");
+    		$dbr->bindParam(':page', $settings['default_as_blog'], PDO::PARAM_STR);
+    		$dbr->execute();
+    		$default_blog = $dbr->fetch();
+   		 }
+    		
+    	if(isset($default_blog['type']) && $default_blog['type'] == 'news') 
+    		{
+    			if($_POST['include_page']=='') {$_POST['include_page']=$default_blog['id'];}
+    			if(isset($settings['default_as_blog_words'])) {$teaser_count=intval($settings['default_as_blog_words']);}
+    			else {$teaser_count=20;}   
+    			if($_POST['teaser']=='')
+    			{
+    				$_POST['teaser']=implode(' ',array_splice(explode(' ',strip_tags($_POST['content'])),0,$teaser_count));
+    			}
+		}
         $dbr = Database::$content->prepare("INSERT INTO ".Database::$db_settings['pages_table']." (page,type,type_addition,time,last_modified,display_time,last_modified_by,title,page_title,description,keywords,category,page_info,breadcrumbs,headline,teaser_headline,teaser,teaser_formatting,teaser_img,content,content_formatting,sidebar_1,sidebar_2,sidebar_3,sidebar_1_formatting,sidebar_2_formatting,sidebar_3_formatting,inline_css,sections,include_page,include_order,include_rss,include_sitemap,include_news,menu_1,menu_2,menu_3,gcb_1,gcb_2,gcb_3,template,template_mobile,language_file,content_type,charset,page_notes,edit_permission,edit_permission_general,custom_values,status,author) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $dbr->bindParam(1, $_POST['page'], PDO::PARAM_STR);
         $dbr->bindParam(2, $_POST['type'], PDO::PARAM_STR);

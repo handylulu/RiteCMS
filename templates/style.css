@@ -20,8 +20,3 @@
 #nav li ul a        {display:block;padding:0.5em 0.8em;color:#fff;}
 #nav li ul a:hover,
 #nav li ul li:hover a {background:#666;color:#fff;text-decoration:none;}
-
-#main .products-col {width:98%;}
-#main .products-col .product {max-width:48%;display:inline-block;}
-#main .products-col .product .product-left {float:left;}
-#main .products-col .product .product-right {float;right;margin-left:50%;}
