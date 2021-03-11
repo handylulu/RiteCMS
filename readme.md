@@ -94,8 +94,14 @@ Credits
 
 Release Notes:
 ----------------------------
+## Version 3.1
+updates since V3.0
 
-### Version 3.0
+* add option of blog mode where all new pages will be automatically added to default blog(news) page
+* htaccess block to php execution in media and files folder
+* added redirect page in database so that you can type /a to go to /admin.php
+
+## Version 3.0
 
 ### RiteCMS V3.0 is a ultrafast simple CMS based on Php & Sqlite.
 Major updates to V2.X includes:
