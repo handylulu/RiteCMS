@@ -25,8 +25,12 @@ insert into 'rite_settings' (name,value) VALUES ('website_top_1','');
 insert into 'rite_settings' (name,value) VALUES ('website_top_2','');
 insert into 'rite_settings' (name,value) VALUES ('website_topnav_1','');
 insert into 'rite_settings' (name,value) VALUES ('website_topnav_2','');
+insert into 'rite_settings' (name,value) VALUES ('default_as_blog','');
+insert into 'rite_settings' (name,value) VALUES ('default_as_blog_words','30');
+insert into 'rite_pages' (page,author,type,type_addition) VALUES ('a',1,'redirect','admin.php');
 delete from 'rite_settings' where name LIKE '%base_%';
 delete from 'rite_settings' where name='psc_version';
+
 COMMIT;
 
 PRAGMA foreign_keys = true;
