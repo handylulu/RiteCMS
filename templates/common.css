@@ -62,7 +62,8 @@ h3 {margin:.3em;font-size:1.25em;text-decoration:underline;color:#66ccff;font-va
 #main .overview    {clear:both;display:flex;flex-flow:row wrap;align-items:flex-start;align-content: space-between;min-height:30rem;overflow:visible;width:100%;}
 #main .overview .product {min-width:22em;max-width:48%;min-height:20rem;margin:1em 0;padding:1em 1.5em 1em 0;text-align:left;} 
 
-#content .logos img {display:block;margin:6px 8px;padding:0;float:left;}
+#content .logos {display:flex;flex-wrap:wrap;flex-direction:row;justify-content:space-between;}
+#content .logos img {display:block;margin:12px 8px;padding:0;}
 
 #content p img {max-width:100%;height:auto;}
 #mailer {color:#66ccff;font-size:1em;font-variant:small-caps;}
@@ -87,8 +88,6 @@ form [type="submit"]	{background-color:#66ccff;border-radius:.25em;color:#fff;fo
 
 #search p                     {}
 #searchfield                  {width:12em;}
-
-
 
 #bottomwrapper                {clear:both;margin:0;padding:.5em 1em 4em .5em;color:#ccc;}
 #bottomwrapper #bottom                       {clear:both;max-width:60em;display:flex;flex-wrap:wrap;flex-direction:row;justify-content:space-between;margin:0 auto;padding:.1em 1em;}

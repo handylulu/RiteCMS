@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=<?php echo $lang['charset']; ?>" />
 <title><?php echo $settings['website_title']; ?> - <?php echo $lang['administration']; if(isset($subtitle)) echo ' - ' . $subtitle; ?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>cms/style.css" media="all" />
 <link rel="shortcut icon" href="<?php echo BASE_URL; ?>templates/images/favicon.png" />
 <script type="text/javascript" src="<?php echo BASE_URL.CMS; ?>js/admin.js"></script>
