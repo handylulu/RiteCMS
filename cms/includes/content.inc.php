@@ -37,9 +37,7 @@ if(empty($data)) // might already be set if error page was loaded
 
 if($data['language_file']=='') $language_file = $settings['default_page_language_file'];
 else $language_file = $data['language_file'];
-
 $localization = new Localization(BASE_PATH.CMS.'lang/'.$language_file);
-
 mb_internal_encoding(Localization::$lang['charset']);
 setlocale(LC_ALL, Localization::$lang['locale']);
 define('CHARSET', Localization::$lang['charset']);
@@ -47,14 +45,11 @@ $type_addition = trim($data['type_addition']);
 $template->assign('type_addition', $type_addition);
 // breadcrumbs:
 $template->assign('breadcrumbs', get_breadcrumbs($data['breadcrumbs']));
-
 $page = $data['page'];
-
 $content = $data['content'];
 if($settings['content_auto_link']==1) $content = make_link($content);
 if($settings['content_smilies']==1) $content = smilies($content);
 if($data['content_formatting']==1) $content = auto_html($content);
-
 $content = parse_special_tags($content);
 
 $sidebar_1 = $data['sidebar_1'];
