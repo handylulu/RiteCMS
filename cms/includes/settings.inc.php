@@ -11,7 +11,7 @@ if(isset($_SESSION[$settings['session_prefix'].'user_type']) && $_SESSION[$setti
     $dbr = Database::$content->prepare("UPDATE ".Database::$db_settings['settings_table']." SET value=:value WHERE name=:name");
     $dbr->bindParam(':value', $val, PDO::PARAM_STR);
     $dbr->bindParam(':name', $key, PDO::PARAM_STR);
-    while(list($key, $val) = each($_POST))
+    foreach ($_POST as $key => $val)
      {
       if($key != "settings_submitted")
        {

@@ -9,11 +9,13 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
+<link rel="apple-touch-icon" type="image/png" href="/assets/apple-touch-icon-180x180-aca6ee064d5ee2105e7fffa672ad8f9df9136f194491adb7c85dc2159c07aec5.png" sizes="180x180" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo $settings['website_title']; if($page_title): ?> - <?php echo $page_title; elseif($title): ?> - <?php echo $title; endif; ?></title>
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>templates/style.css" media="all" />
 <?php if($settings['rss_feed']): ?><link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo BASE_URL.$settings['rss_feed']; ?>" /><?php endif; ?>
 <link rel="shortcut icon" href="<?php echo BASE_URL; ?>templates/images/favicon.png" />
+<link rel="apple-touch-icon" type="image/png" href="<?php echo BASE_URL; ?>templates/images/favicon.png" sizes="16x16" />
 <?php if(isset($pingback)): ?><link rel="pingback" href="<?php echo $pingback; ?>" /><?php endif; ?>
 <script src="<?php echo BASE_URL.CMS; ?>js/main.js"></script>
 <?php if($admin): ?><script src="<?php echo BASE_URL.CMS; ?>js/admin.js"></script><?php endif; ?>

@@ -2,7 +2,7 @@
 //basic settings
 define('CMSHOME', 'admin.php');
 define('AMPERSAND_REPLACEMENT', ':AMP:');
-define('BASE_PATH',realpath(__DIR__ . '/..').'/');
+define('BASE_PATH',realpath(__DIR__ .'/..').'/'); //define the base_bath based on /data/settings.php. If you are the website is not on a root folder, define it accordingly. For example, if your website is on ./web/ where data is located at ./web/data, define base_path as realpath(_DIR_.'/..).'/r/'
 define('CACHE_DIR', 'data/cache/');
 define('CATEGORY_IDENTIFIER', 'tag_');
 define('CMS', 'cms/');
